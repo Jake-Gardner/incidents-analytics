@@ -1,12 +1,17 @@
 'use client'
 
-import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
-export default function Map() {
+interface Props {
+    latitude: number
+    longitude: number
+}
+
+export default function Map({ latitude, longitude }: Props) {
     return (
         <div>
             <MapContainer
-                center={[37.541885, -77.440624]}
+                center={[latitude, longitude]}
                 zoom={13}
                 style={{ height: 500, width: 500 }}
             >
@@ -14,7 +19,7 @@ export default function Map() {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[37.541885, -77.440624]}>
+                <Marker position={[latitude, longitude]}>
                     <Popup>
                         A pretty CSS3 popup. <br /> Easily customizable.
                     </Popup>
