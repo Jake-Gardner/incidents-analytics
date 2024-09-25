@@ -9,7 +9,7 @@ interface Props {
 
 export default function Map({ latitude, longitude }: Props) {
     return (
-        <div>
+        <div style={{ margin: 15 }}>
             <MapContainer
                 center={[latitude, longitude]}
                 zoom={13}
