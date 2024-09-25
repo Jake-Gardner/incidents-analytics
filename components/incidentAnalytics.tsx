@@ -31,7 +31,7 @@ export default function IncidentAnalytics() {
                 <h4>{weather.temperatureF} &deg;F</h4>
                 <h4>Wind {weather.windSpeedMPH} MPH</h4>
             </div>}
-            {rawData && <Map latitude={rawData.address.latitude} longitude={rawData.address.longitude} />}
+            {rawData && <Map incident={rawData} />}
         </div>
     )
 }

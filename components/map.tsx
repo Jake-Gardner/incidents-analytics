@@ -1,18 +1,22 @@
 'use client'
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Incident } from '../types'
 
 interface Props {
-    latitude: number
-    longitude: number
+    incident: Incident
 }
 
-export default function Map({ latitude, longitude }: Props) {
+export default function Map({
+    incident: {
+        address: { latitude, longitude, common_place_name, address_line1 }
+    }
+}: Props) {
     return (
         <div style={{ margin: 15 }}>
             <MapContainer
                 center={[latitude, longitude]}
-                zoom={13}
+                zoom={16}
                 style={{ height: 500, width: 500 }}
             >
                 <TileLayer
@@ -21,7 +25,7 @@ export default function Map({ latitude, longitude }: Props) {
                 />
                 <Marker position={[latitude, longitude]}>
                     <Popup>
-                        A pretty CSS3 popup. <br /> Easily customizable.
+                        {common_place_name}<br />{address_line1}
                     </Popup>
                 </Marker>
             </MapContainer>
