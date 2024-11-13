@@ -1,4 +1,6 @@
-# prominent-incidents
+# incidents-analytics
+
+This app is based on a prompt provided while interviewing for a software engineer role. The requirement was to create a web app which could accept an uploaded JSON file describing an incident to which emergency responders were dispatched. Upon uploading a file, it should display a map with the location of the incident, as well as some metadata such as the weather. Time spent developing this project was approximately 4 hours.
 
 Prerequisites
 -------------
@@ -17,9 +19,7 @@ Running
 
 Notes/Comments
 --------------
-* The total cumulative time I spent on this project was about 4.5-5 hours.
 * A significant chunk of my time was spent going down a bit of a rabbit hole on selecting the source for weather data. I did initially try the recommended API (https://dev.meteostat.net/), but found that, when I tried subscribing on RapidAPI, I would always receive 401 with no explanation (I was logged in with my Google account). The second one I tried was https://openweathermap.org/, but discovered that, while current weather data was available for free, their historical weather data API required a paid subscription. After that I ended up with https://open-meteo.com/.
-* I did want to note that the bulk of my experience has been on OS X with the IntelliJ family of IDE's. These were provided by my last employer, so I am now getting used to developing on my personal Windows computer with VS Code, which has unsurprisingly been a bit of a learning curve. I have noticed it making some strange style choices, like it seems as though some of my Typescript files use a two-space indent while others are four-space. So I apologize for any apparent strangeness; I didn't prioritize figuring out the styling for this IDE before finishing the project.
 
 Future Development Ideas
 ------------------------
